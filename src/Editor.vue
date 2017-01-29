@@ -5,6 +5,11 @@ export default {
   mounted() {
     window.addEventListener("message", this.onIframeMessage, false);
   },
+  data() {
+    return {
+      document: window.document
+    }
+  },
   methods: {
     onIframeMessage(evt) {
       if (evt.data.type === 'READY') {
@@ -32,7 +37,7 @@ export default {
 </script>
 
 <template>
-  <iframe src="http://localhost:8005/samples/flowchart.html"></iframe>
+  <iframe :src="'http://' + document.location.hostname + ':8005/samples/flowchart.html'"></iframe>
 </template>
 
 <style scoped>
