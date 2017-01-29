@@ -1,10 +1,8 @@
 # Perez Niño
-> Perez Niño
 
 Este es el repo del Editor de flujos para la app Perez Niño. Url de desarrollo [http://ssh.javier.xyz:8123/](http://ssh.javier.xyz:8123/).
 
 [![pereznino](screenshot.png)](http://ssh.javier.xyz:8123/)
-
 
 # ¿Cómo participar creando flujos?
 * Abre la app de edición [http://ssh.javier.xyz:8123/](http://ssh.javier.xyz:8123/) y crea un diagrama de flujo con el trámite que quieres resolver.
@@ -17,6 +15,8 @@ Este es el repo del Editor de flujos para la app Perez Niño. Url de desarrollo 
 ## ¿Quieres participar desarrollando?
 
 Woot! Gracias! La app está hecha en Vuejs, estas son las instrucciones para echar a andar el ambiente de desarrollo:
+
+Si quieres saber más del backend: [https://github.com/Holowaychitos/pereznino-backend](https://github.com/Holowaychitos/pereznino-backend)
 
 ``` bash
 # install dependencies
