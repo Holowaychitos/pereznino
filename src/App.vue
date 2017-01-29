@@ -37,9 +37,9 @@ export default {
     },
 
     onEditorInput(newEditorData) {
-      console.warn('NEW EDITOR DATA', JSON.stringify(newEditorData))
-
       this.config = newEditorData
+      this.configString = encodeURI(JSON.stringify(newEditorData))
+
       this.chat = []
       this.chatOptions = null
       this.BOT = BOT(this.config, this.io, this.log)
@@ -59,6 +59,7 @@ export default {
   data() {
     return {
       config: kDefaultObj,
+      configString: encodeURI(JSON.stringify(kDefaultObj)),
       chat: [],
       chatOptions: null,
       ioInputCallback: () => {}
@@ -71,7 +72,9 @@ export default {
   <div class="pereznino">
     <div class="pereznino_topbar">
       <div class="pereznino_topbar_title">Perez Niño <b>Creator</b></div>
-      <div class="button">¡Enviar!</div>
+      <a class="button" :href="'mailto:hi@javier.xyz?subject=Hola! Revisen este diagrama&body=' + configString">
+        ¡Enviar!
+      </a>
     </div>
 
     <div class="pereznino_main">
@@ -154,6 +157,7 @@ export default {
     font-weight: 400;
     text-transform: uppercase;
     cursor: pointer;
+    text-decoration: none;
   }
   .button:hover {
     background: #3498DB;
