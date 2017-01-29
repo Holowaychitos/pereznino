@@ -29,5 +29,5 @@ npm run dev
 npm run build
 
 # run the flowchart server
-cd ext/gojsweb python -m SimpleHTTPServer 8004
+cd ext/gojsweb python -m SimpleHTTPServer 8005
 ```
