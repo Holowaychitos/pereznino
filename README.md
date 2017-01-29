@@ -13,9 +13,9 @@ Este es el repo del Editor de flujos para la app Perez Niño. Url de desarrollo 
 * En el correo, aparte del código, mándanos la fuente de tu información.
 * Nosotros probaremos el flujo y te haremos saber cuando esté publicado o si tenemos preguntas, *¡muchas gracias!*
 
-## Build Setup
+## ¿Quieres participar desarrollando?
 
-This is the repo for the PerezNiño Admin UI. This is a Vuejs App, with a custom flowchart interpreter.
+Woot! Gracias! La app está hecha en Vuejs, estas son las instrucciones para echar a andar el ambiente de desarrollo:
 
 ``` bash
 # install dependencies
