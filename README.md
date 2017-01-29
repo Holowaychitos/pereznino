@@ -27,4 +27,7 @@ npm run dev
 
 # build for production with minification
 npm run build
+
+# run the flowchart server
+cd ext/gojsweb python -m SimpleHTTPServer 8004
 ```
