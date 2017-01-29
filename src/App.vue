@@ -29,40 +29,68 @@ export default {
       this.ioInputCallback = cb
     },
     log(log) {
+      // this.addToRequeriments(log)
+
+      // STOP
       if (log === 'Start' || log === 'End') return
+
       this.chat.push({
         author: 'bot',
         message: log
       })
     },
 
+    addToRequeriments(log) {
+      var regex = /\[(.*?)\]/
+
+      function getMatches(string, regex, index) {
+        console.log(index)
+
+        index || (index = 1)
+        var matches = []
+        var match
+        while (match = regex.exec(string)) {
+          matches.push(match[index])
+        }
+        return matches;
+      }
+
+      var matches = getMatches(log, regex, 1)
+
+      console.warn(matches)
+    },
+
     onEditorInput(newEditorData) {
       this.config = newEditorData
       this.configString = encodeURI(JSON.stringify(newEditorData))
 
-      this.chat = []
-      this.chatOptions = null
-      this.BOT = BOT(this.config, this.io, this.log)
-      this.BOT({
-        step: -1
-      })
+      this.onRestart()
     },
     onUserInput(message) {
-      console.warn({message})
       this.chat.push({
         author: 'user',
         message: message
       })
       this.ioInputCallback(message)
+    },
+    onRestart() {
+      this.chat = []
+      this.requerimentsState = []
+      this.chatOptions = null
+      this.BOT = BOT(this.config, this.io, this.log)
+      this.BOT({
+        step: -1
+      })
     }
   },
   data() {
     return {
-      config: kDefaultObj,
-      configString: encodeURI(JSON.stringify(kDefaultObj)),
       chat: [],
       chatOptions: null,
-      ioInputCallback: () => {}
+      config: kDefaultObj,
+      configString: encodeURI(JSON.stringify(kDefaultObj)),
+      ioInputCallback: () => {},
+      requerimentsState: []
     }
   }
 }
@@ -108,9 +136,15 @@ export default {
 
         <input v-if="!chatOptions" class="pereznino_chat_input" placeholder="¡Prueba tu bot!">
 
-        <div v-if="chatOptions" class="pereznino_chat_options">
+        <div v-if="chatOptions && chatOptions[0] !== 'GRACIAS'" class="pereznino_chat_options">
           <div class="pereznino_chat_options_button "v-for="option in chatOptions" @click="onUserInput(option)">
             {{option}}
+          </div>
+        </div>
+
+        <div v-if="chatOptions && chatOptions[0] === 'GRACIAS'" class="pereznino_chat_options">
+          <div class="pereznino_chat_options_button" @click="onRestart">
+            Volver a empezar
           </div>
         </div>
       </div>
