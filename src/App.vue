@@ -72,6 +72,9 @@ export default {
   <div class="pereznino">
     <div class="pereznino_topbar">
       <div class="pereznino_topbar_title">Perez Niño <b>Creator</b></div>
+      <a class="button -light" href="https://github.com/Holowaychitos/pereznino">
+        Más información
+      </a>
       <a class="button" :href="'mailto:hi@javier.xyz?subject=Hola! Revisen este diagrama&body=' + configString">
         ¡Enviar!
       </a>
@@ -159,6 +162,14 @@ export default {
     text-transform: uppercase;
     cursor: pointer;
     text-decoration: none;
+  }
+  .button.-light {
+    background: #ECF0F1;
+    margin-right: 0.5rem;
+    color: #000;
+  }
+  .button.-light:hover {
+    background: #BDC3C7;
   }
   .button:hover {
     background: #3498DB;
