@@ -141,6 +141,7 @@ export default {
     font-weight: 300;
     display: flex;
     align-items: center;
+    letter-spacing: -1px;
   }
   .pereznino_topbar_title {
     flex: 1;

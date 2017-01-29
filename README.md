@@ -1,6 +1,8 @@
 # Perez Niño
 > Perez Niño
 
+![Perez Niño](screenshot.png)
+
 ## Build Setup
 
 This is the repo for the PerezNiño Admin UI. This is a Vuejs App, with a custom flowchart interpreter.
