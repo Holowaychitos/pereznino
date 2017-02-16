@@ -1,8 +1,10 @@
 # Perez Niño
 
-Este es el repo del Editor de flujos para la app Perez Niño. Url de desarrollo [http://ssh.javier.xyz:8123/](http://ssh.javier.xyz:8123/).
+Este es el repo del Editor de flujos para la app Perez Niño.
 
 [![pereznino](screenshot.png)](http://ssh.javier.xyz:8123/)
+
+* Update:* La URL ya no funciona, pero todavía puedes correr tu propia instancia.
 
 # ¿Cómo participar creando flujos?
 * Abre la app de edición [http://ssh.javier.xyz:8123/](http://ssh.javier.xyz:8123/) y crea un diagrama de flujo con el trámite que quieres resolver.
